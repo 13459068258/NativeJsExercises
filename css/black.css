@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(0, 0, 0);
+}
+
+
+nav {
+    border: 1px black solid;
+    background: rgb(0, 0, 0);
+}

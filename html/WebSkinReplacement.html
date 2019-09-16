@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>网页换肤</title>
+    <style>
+        
+        button {
+            width: 10px;
+            height: 10px;
+            box-sizing: content-box;
+            cursor: pointer;
+        }
+
+        #red {
+            border: 4px red solid;
+            background: rgb(255, 0, 0);
+        }
+
+        #green {
+            border: 4px green solid;
+            background: green;
+        }
+    
+        #black {
+            border: 4px black solid;
+            background: black;
+        }
+
+        .active {
+            background: white !important;
+        }
+
+        nav>a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }    
+    </style>
+    <link rel="stylesheet" href="../css/black.css">
+    <link rel="stylesheet" href="../css/green.css">
+    <link rel="stylesheet" href="../css/red.css">
+</head>
+<body>
+   <div class="wrap">
+        <div class="btn-group">
+            <button id="red" class="active"></button>
+            <button id='green'></button>
+            <button id='black'></button>
+        </div>
+        <nav>
+           <a href="#">测试</a>
+           <a href="#">测试</a>
+           <a href="#">测试</a>
+           <a href="#">测试</a>
+           <a href="#">测试</a>
+           <a href="#">测试</a>
+        </nav>
+   </div>
+   <script>
+       window.onload = function(){
+            let btns = document.getElementsByTagName('button');
+            let links = document.getElementsByTagName('link');
+
+            for(let i=0 ; i<btns.length;i++){
+                btns[i].onclick = function(){
+                    for(item in btns){
+                        btns[item].className='';
+                    }
+                    this.className='className';
+                    links[2].href='../css/'+this.id+'.css';
+                }
+            }
+
+       }
+   
+   
+   </script>
+
+</body>
