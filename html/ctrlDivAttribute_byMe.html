@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>控制DIV属性</title>
+    <style>
+        .content {
+            border: 1px #000 solid;
+            width: 300px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-top: 30px;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>不看模板敲一遍</h2>
+    <div class="content">
+        <button class="btn">变宽</button>
+        <button class="btn">变高</button>
+        <button class="btn">变蓝</button>
+        <button class="btn">隐藏</button>
+        <button class="btn">重置</button>
+    </div>
+    <div id="box" class="box"></div>
+
+    <script>
+        // box.style[0]='';这是一开始的错误想法
+        //应该是box.style['']='';
+        function change(elem, attr, sty) {
+            elem.style[attr] = sty;
+        }
+
+        window.onload = function () {
+            var btns = document.getElementsByClassName('btn');
+            var box = document.getElementById('box');
+
+            var sty = ['300px', '400px', 'blue', 'none', 'block'];
+            var attrs = ['width', 'height', 'color', 'display', 'display'];
+
+            for (let i = 0; i < btns.length; i++) {
+                // 之前var去定义,下面
+                btns[i].onclick = function () {
+                    box.style.cssText = '';
+                    change(box, attrs[i], sty[i]);
+                    console.log(btns[i]); //点击变宽时输出<button class="btn">变宽</button>
+                }
+
+            }
+
+
+
+        }
+
+
+    </script>
+</body>

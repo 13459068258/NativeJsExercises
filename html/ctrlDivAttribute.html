@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>控制DIV属性</title>
+    <style>
+        .content {
+            border: 1px black solid;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            margin-top: 10px;
+            margin-left: 250px;
+        }
+
+        .content>p {
+            text-align: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: rgb(0, 0, 0);
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>照着模板敲一遍</h2>
+    <div class="content">
+        <p>
+            <button class="btn">变宽</button>
+            <button class="btn">变高</button>
+            <button class="btn">变色</button>
+            <button class="btn">隐藏</button>
+            <button class="btn">重置</button>
+        </p>
+        <hr>
+        <div id='box' class="box"></div>
+    </div>
+
+
+    <!--  -->
+    <script>
+        // 定义转变函数
+        // 原理举例：box.style['width']= '200px';
+        // 思路：通过修改对象属性的style来改边box的特征
+        function changeAttr(elem, attr, sty) {
+            elem.style[attr] = sty;
+        }
+
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var btns = document.getElementsByClassName("btn");
+            console.log(btns);
+            var styles = ['200px', '200px','red','none','block'];
+            var attrs = ['width','height','background','display','display'];
+
+            for(var i=0;i<btns.length;i++){
+                btns[i].index=i;
+                btns[i].onclick = function() {
+                    this.index === btns.length -1 ;
+                    box.style.cssText = '';
+                    changeAttr(box,attrs[this.index],styles[this.index]);
+                  console.log(btns[i]); //输出undefined
+                  console.log(btns[this.index]); //点击变宽时输出<button class="btn">变宽</button>
+                }
+                
+            }
+        }
+
+
+    </script>
+</body>
