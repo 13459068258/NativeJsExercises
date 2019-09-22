@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>求数组中所有数字的和</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入数字，以空格隔开">
+    <button>计算</button>
+    <p id="result"></p>
+    <script>
+        window.onload = function() {
+            let inputs = document.getElementsByTagName('input');
+            let btns = document.getElementsByTagName('button');
+            let res = document.getElementById('result');
+
+            btns[0].onclick = function() {
+                let str = inputs[0].value.split(' ');
+                let result = 0;
+                for (var i=0;i<str.length;i++){
+                    result+=Number(str[i])
+                }
+                res.innerHTML = result;
+            }
+        }
+    
+    </script>
+</body>
+</html>
