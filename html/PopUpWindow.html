@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹出窗</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        button {
+            width: 100px;
+            border: none;
+            background-color: rgba(0, 0, 255, 0.247);
+        }
+
+        .ck {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            background-color: #eee;
+            transform: translate(-50%, -50%);
+        }
+
+        .ck .close {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div class="ck" style="display: none;">
+        <span class="close">X</span>
+        <p>测试窗口</p>
+    </div>
+    <script>
+        let btn = document.querySelector('button');
+        let ck = document.querySelector('.ck');
+        let body = document.querySelector('body');
+        let close = document.querySelector('.close');
+        btn.onclick = function () {
+            if (ck.style.display == 'none') {
+                ck.style.display = 'block';
+                body.style.backgroundColor = 'rgba(0,0,0,0.3)';
+            }
+        }
+
+        close.onclick = function () {
+            ck.style.display = 'none';
+            body.style.backgroundColor = 'white';
+        }
+
+    </script>
+</body>
+
+</html>
