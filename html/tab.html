@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易选项卡</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrap {
+        position: absolute;
+        left: 50%;
+        width: 600px;
+        height: 600px;
+        border: 1px solid black;
+        transform: translateX(-50%);
+    }
+
+    .nav {
+        background-color: #000;
+    }
+
+    .nav {
+        color: white;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .nav li {
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .nav li:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .content {
+        width: 598px;
+        height: 100%;
+
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <ul class="nav">
+            <li style="background-color: #fff; color:black;">内容一</li>
+            <li>内容二</li>
+            <li>内容三</li>
+        </ul>
+        <ul class="content" style="display: block">
+            <li><a href="#">测试</a></li>
+            <li><a href="#">测试</a></li>
+            <li><a href="#">测试</a></li>
+            <li><a href="#">测试</a></li>
+            <li><a href="#">测试</a></li>
+            <li><a href="#">测试</a></li>
+        </ul>
+        <ul class="content" style="display: none">
+            <li><a href="#">测试2</a></li>
+            <li><a href="#">测试2</a></li>
+            <li><a href="#">测试2</a></li>
+            <li><a href="#">测试2</a></li>
+            <li><a href="#">测试2</a></li>
+            <li><a href="#">测试2</a></li>
+        </ul>
+        <ul class="content" style="display: none">
+            <li><a href="#">测试3</a></li>
+            <li><a href="#">测试3</a></li>
+            <li><a href="#">测试3</a></li>
+            <li><a href="#">测试3</a></li>
+            <li><a href="#">测试3</a></li>
+            <li><a href="#">测试3</a></li>
+        </ul>
+    </div>
+
+    <script>
+    let lis = document.querySelectorAll('.nav li');
+    let contents = document.querySelectorAll('.content');
+    console.log(lis);
+
+    for(let i=0;i<lis.length;i++){
+        lis[i].onmouseover = function(){
+            lis[i].style.cssText='';
+            lis[i].style.backgroundColor = 'white';
+            lis[i].style.color = 'black';
+            contents[i].style.display='block';
+        }
+        lis[i].onmouseout = function(){
+            lis[i].style.cssText='';
+            lis[i].style.backgroundColor = 'black';
+            lis[i].style.color = 'white';
+            contents[i].style.display='none';
+        }
+    }
+    
+    </script>
+</body>
+
+</html>
