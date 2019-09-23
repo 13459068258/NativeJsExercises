@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>改变div属性性</title>
+</head>
+
+<style>
+    .wrap {
+        position: absolute;
+        left: 50%;
+        width: 600px;
+        height: 500px;
+        background-color: pink;
+        transform: translateX(-50%);
+    }
+    .btn {
+        margin-top: 10px;
+        padding-left:40%;
+    }
+
+    .box {
+        position: relative;
+        margin: 200px auto;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <label for="">
+            <span>属性名：</span>
+            <input type="text" value="background" id='attribute-name'>
+        </label>
+        <label for="">
+            <span>属性值：</span>
+            <input type="text" value="black" id='attribute-value'>
+        </label>
+        <div class="btn">
+            <button>确定</button>
+            <button>重置</button>
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+
+
+
+    <script>
+        function change(elem, attr, vlue) {
+            elem.style[attr] = vlue;
+        }
+        window.onload = function () {
+            let aname = document.querySelector('#attribute-name');
+            let avalue = document.querySelector('#attribute-value');
+            let btns=document.querySelectorAll('button');
+            let box=document.querySelector('.box');
+            btns[0].onclick = function() {
+                var elem=box;
+                var attr=aname.value;
+                var vlue=avalue.value;
+                change(elem, attr, vlue);
+            }
+            btns[1].onclick = function(){
+                box.style.cssText='';
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
