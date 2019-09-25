@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>复选框练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            position: absolute;
+            left: 50%;
+            width: 200px;
+            height: 400px;
+            border: 1px solid black;
+            transform: translateX(-50%);
+        }
+
+        label {
+            display: block;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .title {
+            border-bottom: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <label class="title">
+            <input type="checkbox" name="tab" id="ck" onchange="fx()"><strong>全选</strong>
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+        <label>
+            <input type="checkbox">选项
+        </label>
+    </div>
+
+    <script>
+
+        function fx() {
+            let inps = document.querySelectorAll('input');
+            let flag = document.querySelector('#ck').checked;
+            let st = document.querySelector('strong');
+            if (flag) {
+                st.innerHTML = '全不选';
+                for (let i = 1; i < inps.length; i++) {
+                    inps[i].checked = true;
+
+                }
+            } else {
+                st.innerHTML = '全选';
+                for (let i = 1; i < inps.length; i++) {
+                    inps[i].checked = false;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
