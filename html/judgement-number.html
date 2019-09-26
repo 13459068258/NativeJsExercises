@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>判断数字为几位数</title>
+</head>
+<body>
+    <input type="text" oninput = "value=value.replace(/[^\d]/g,'')">
+    <button>判断数字为几位数</button>
+    <p>测试</p>
+
+
+    <script>
+        let inp=document.querySelector('input');
+        let btn = document.querySelector('button');
+        let cont = document.querySelector('p');
+
+        btn.onclick = function(){
+            if(inp.value==''){
+                alert('请输入数字');
+            }else{
+                cont.innerHTML='这是'+inp.value.length+'位数';
+            }
+        }
+    
+    </script>
+</body>
+</html>
