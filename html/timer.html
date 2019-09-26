@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计时器，自动加1</title>
+</head>
+<body>
+    <span>0</span>
+
+    <script>
+        window.onload = function(){
+            var num = document.querySelector('span');
+            var i=0;
+            setInterval(addNum,1000);
+            function addNum(){
+                num.innerHTML=++i;
+            }
+        }
+    
+    
+    </script>
+</body>
+</html>
